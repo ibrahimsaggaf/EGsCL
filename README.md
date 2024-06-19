@@ -1,6 +1,10 @@
 # AGsCL
 This is a python implementation of the Asymmetric Gaussian noise augmentation-based contrastive learning method (AGsCL).
 
+<p align="center">
+  <img src="images/Flowchart.png" width="1000" title="AGsCL flow-chart">
+</p>
+
 # Usage
 This repository contains the implementation of AGsCL. The implementation is built in Python3 (version 3.10.12) using Scikit-learn and the deep learning library Pytorch. 
 
