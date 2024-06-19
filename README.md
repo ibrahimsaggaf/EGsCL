@@ -44,10 +44,10 @@ Here we briefly describe each `.py` file in the **code** folder.
 `utils.py` Includes some helper functions.
 
 # Data availability
-The datasets used in this work can be downloaded from.
+The datasets used in this work can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12143797.svg)](https://doi.org/10.5281/zenodo.12143797).
 
 # Pretrained encoders for AGsCL
-The pretrained encoders can be downloaded from .
+The pretrained encoders can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12143797.svg)](https://doi.org/10.5281/zenodo.12143797).
 
 # Acknowledgements
 The authors acknowledge the support by the School of Computing and Mathematical Sciences and the Birkbeck GTA programme.
