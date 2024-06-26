@@ -1,5 +1,15 @@
 # AGsCL
-This is a python implementation of the Asymmetric Gaussian noise augmentation-based contrastive learning method (AGsCL).
+This is a python implementation of the Asymmetric Gaussian noise augmentation-based contrastive learning method (AGsCL) reported in:
+```
+@article{...,
+  title={Predicting the pro-longevity or anti-longevity effect of model organism genes with asymmetric Gaussian noise augmentation-based contrastive learning on protein-protein interaction networks},
+  author={Alsaggaf, Ibrahim and Freitas, Alex and Wan, Cen},
+  journal={...},
+  pages={...},
+  year={...},
+  publisher={...}
+}
+```
 
 <p align="center">
   <img src="images/Flowchart.png" width="1000" title="AGsCL flow-chart">
