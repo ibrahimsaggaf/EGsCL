@@ -25,7 +25,7 @@ python3 main.py\
 --batch_size -1 --epochs 1000 --step 1 --lr 1e-4 --wd 1e-6\
 --loss SupCon --temperature 0.1\
 --seed 1111\
---res_path [the path where the results are saved]
+--res_path [the path where the results will be saved]
 ```
 
 ### The code
