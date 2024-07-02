@@ -26,14 +26,71 @@ This repository contains the implementation of AGsCL. The implementation is buil
 The implementation should run on a machine with at least 5 cores, 20 GB memory and 1 GPU. To run this implementation you need to do the following steps:
 1. Make sure all the requirements stated above are installed.
 2. Navigate to your working directory where the `.py` files are stored (e.g. src).
-3. Execute the following command:
+3. Execute one of the following commands:
+
+To run Sup-AGsCL execute:
 ```
 python3 main.py\
 --X [full path to X] --y [full path to y] --delimiter "," --header 0\
---shift 0.5\
+--beta 0.5\
 --val_metric mcc --train_size 0.8 --cv 10\
 --batch_size -1 --epochs 1000 --step 1 --lr 1e-4 --wd 1e-6\
 --loss SupCon --temperature 0.1\
+--seed 1111\
+--res_path [the path where the results will be saved]
+```
+To run Self-AGsCL execute:
+```
+python3 main.py\
+--X [full path to X] --y [full path to y] --delimiter "," --header 0\
+--beta 0.5\
+--val_metric mcc --train_size 0.8 --cv 10\
+--batch_size -1 --epochs 1000 --step 1 --lr 1e-4 --wd 1e-6\
+--loss SimCLR --temperature 0.07\
+--seed 1111\
+--res_path [the path where the results will be saved]
+```
+To run Sup-GsCL (beta=0) execute:
+```
+python3 main.py\
+--X [full path to X] --y [full path to y] --delimiter "," --header 0\
+--beta 0.0\
+--val_metric mcc --train_size 0.8 --cv 10\
+--batch_size -1 --epochs 1000 --step 1 --lr 1e-4 --wd 1e-6\
+--loss SupCon --temperature 0.1\
+--seed 1111\
+--res_path [the path where the results will be saved]
+```
+To run Self-GsCL (beta=0) execute:
+```
+python3 main.py\
+--X [full path to X] --y [full path to y] --delimiter "," --header 0\
+--beta 0.0\
+--val_metric mcc --train_size 0.8 --cv 10\
+--batch_size -1 --epochs 1000 --step 1 --lr 1e-4 --wd 1e-6\
+--loss SimCLR --temperature 0.07\
+--seed 1111\
+--res_path [the path where the results will be saved]
+```
+To run Sup-GsCL [(Alsaggaf et al., 2024)](https://doi.org/10.1093/bfgp/elad059) execute:
+```
+python3 main.py\
+--X [full path to X] --y [full path to y] --delimiter "," --header 0\
+--beta fixed\
+--val_metric mcc --train_size 0.8 --cv 10\
+--batch_size -1 --epochs 1000 --step 1 --lr 1e-4 --wd 1e-6\
+--loss SupCon --temperature 0.1\
+--seed 1111\
+--res_path [the path where the results will be saved]
+```
+To run Self-GsCL [(Alsaggaf et al., 2024)](https://doi.org/10.1093/bfgp/elad059) execute:
+```
+python3 main.py\
+--X [full path to X] --y [full path to y] --delimiter "," --header 0\
+--beta fixed\
+--val_metric mcc --train_size 0.8 --cv 10\
+--batch_size -1 --epochs 1000 --step 1 --lr 1e-4 --wd 1e-6\
+--loss SimCLR --temperature 0.07\
 --seed 1111\
 --res_path [the path where the results will be saved]
 ```
@@ -53,11 +110,8 @@ Here we briefly describe each `.py` file in the **code** folder.
 
 `utils.py` Includes some helper functions.
 
-# Data availability
-The datasets used in this work can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12143797.svg)](https://doi.org/10.5281/zenodo.12143797).
-
-# Pretrained encoders for AGsCL
-The pretrained encoders can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12143797.svg)](https://doi.org/10.5281/zenodo.12143797).
+# Availability
+The datasets used in this work and the pretrained encoders that obtained the best predictive performance for each organism can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12143797.svg)](https://doi.org/10.5281/zenodo.12143797).
 
 # Acknowledgements
 The authors acknowledge the support by the School of Computing and Mathematical Sciences and the Birkbeck GTA programme.
