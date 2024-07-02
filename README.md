@@ -1,4 +1,4 @@
-# AGsCL
+# Predicting the pro-longevity or anti-longevity effect of model organism genes with asymmetric Gaussian noise augmentation-based contrastive learning on protein-protein interaction networks
 This is a python implementation of the Asymmetric Gaussian noise augmentation-based contrastive learning method (AGsCL) reported in:
 ```
 @article{...,
@@ -7,7 +7,8 @@ This is a python implementation of the Asymmetric Gaussian noise augmentation-ba
   journal={...},
   pages={...},
   year={...},
-  publisher={...}
+  publisher={...},
+  note={Submitted for publication to ..., July 2024}
 }
 ```
 
