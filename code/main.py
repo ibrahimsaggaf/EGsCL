@@ -7,7 +7,6 @@ from data import AgeingData
 from model import AGsCL
 
 
-
 def main(args):
     torch.manual_seed(args.seed)
     check_path(args.res_path)
@@ -44,11 +43,11 @@ def main(args):
 
     model = AGsCL(
             data, args.val_metric, args.loss, args.epochs, args.batch_size, args.step, args.temperature, args.lr, 
-            args.wd, device, args.res_path, enc_kwargs, args.shift
+            args.wd, device, args.res_path, enc_kwargs, args.beta
         )
     model.fit_cv()
     torch.save(model.cv_res, 
-            Path(args.res_path, f'AGsCL--{args.loss}--{args.val_metric}--{args.shift}--cv_res.pt')
+            Path(args.res_path, f'AGsCL--{args.loss}--{args.val_metric}--{args.beta}--cv_res.pt')
     )
 
 
@@ -62,10 +61,10 @@ if __name__ == '__main__':
     parser.add_argument('--X2', required=False, help='full path of X2 file')
     parser.add_argument('--delimiter2', required=False, help='delimiter2')
     parser.add_argument('--header2', required=False, type=int, help='if the file has a header and an index column')
-    parser.add_argument('--shift', type=float, help='shift the Gaussian noise mean to create two augmentations')
+    parser.add_argument('--beta', type=float, help='shift the Gaussian noise mean, possible values are 0.0, a positive float number, or fixed')
     parser.add_argument('--res_path', help='the path where the results are saved')
     parser.add_argument('--val_metric', default='mcc', help='the metric for model selection')
-    parser.add_argument('--loss', default='SupCon', help='the contras   tive loss, either SupCon or SimCLR')
+    parser.add_argument('--loss', default='SupCon', help='the contrastive loss, either SupCon or SimCLR')
     parser.add_argument('--train_size', type=float, default=0.8, help='the training set size when splitting the data')
     parser.add_argument('--cv', type=int, default=10, help='the number of cross validation folds')
     parser.add_argument('--batch_size', type=int, default=-1, help='the batch size. To use all training samples pass the value -1')
@@ -75,6 +74,7 @@ if __name__ == '__main__':
     parser.add_argument('--wd', type=float, default=1e-6, help='weight decay')
     parser.add_argument('--temperature', type=float, default=0.1, help='temperature hyperparameter')
     parser.add_argument('--seed', type=int, default=1111, help='seed')
+    parser.add_argument('--gpu', type=int, default=0, help='the GPU id')
 
     args = parser.parse_args()
     main(args)

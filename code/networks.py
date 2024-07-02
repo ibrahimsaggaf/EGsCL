@@ -26,13 +26,12 @@ class Encoder(nn.Module):
     def __init__(self, enc_in_dim, enc_dim, enc_out_dim, proj_dim, proj_out_dim):
         super().__init__()
         
-        layers = [
+        self.encoder = nn.Sequential(
             LinearLayer(enc_in_dim, enc_dim),
             LinearLayer(enc_dim, enc_dim),
             LinearLayer(enc_dim, enc_dim),
             LinearLayer(enc_dim, enc_out_dim, output_layer=True)
-        ]
-        self.encoder = nn.Sequential(*layers)
+        )
         
         self.proj_head = nn.Sequential(
             LinearLayer(enc_out_dim, proj_dim),

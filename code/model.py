@@ -56,7 +56,7 @@ class BaseModel:
         self.best_enc = Encoder(**self.enc_kwargs).to(self.device)
         checkpoint = torch.load(
             Path(
-                self.res_path, f'AGsCL--{self.loss}--{fold}--{self.val_metric}--{self.shift}_checkpoint.pt'
+                self.res_path, f'AGsCL--{self.loss}--{fold}--{self.val_metric}--{self.beta}_checkpoint.pt'
             )
         )
         self.best_enc.load_state_dict(checkpoint)
@@ -75,7 +75,7 @@ class BaseModel:
         if res[f'test_{self.val_metric}'] >= self.fold_res[f'best_val_{self.val_metric}']:
             torch.save(
                 self.enc.state_dict(), Path(
-                    self.res_path, f'AGsCL--{self.loss}--{fold}--{self.val_metric}--{self.shift}_checkpoint.pt'
+                    self.res_path, f'AGsCL--{self.loss}--{fold}--{self.val_metric}--{self.beta}_checkpoint.pt'
                 )
             )
             self.fold_res[f'best_val_{self.val_metric}'] = res[f'test_{self.val_metric}']
@@ -130,7 +130,7 @@ class BaseModel:
 
 class AGsCL(BaseModel):
     def __init__(self, data, val_metric, loss, epochs, batch_size, step, temperature, lr, wd, device, res_path, 
-                 enc_kwargs, shift):
+                 enc_kwargs, beta):
         super().__init__(
             data = data,
             val_metric = val_metric,
@@ -145,7 +145,7 @@ class AGsCL(BaseModel):
             res_path = res_path
         )
         self.enc_kwargs = enc_kwargs
-        self.shift = shift
+        self.beta = beta
 
 
     def _fit(self, fold, train_X, train_y, val_X, val_y):
@@ -172,12 +172,13 @@ class AGsCL(BaseModel):
 
                 self.enc.zero_grad()
 
-                if self.shift == 0.0:
+                if self.beta == 'fixed':
                     x_i = x + torch.normal(mean=0, std=1, size=x.size(), device=self.device)
                     x_j = x + torch.normal(mean=0, std=1, size=x.size(), device=self.device)
+
                 else:
-                    x_i = x + torch.normal(mean=train_X.mean() + self.shift, std=train_X.std(), size=x.size(), device=self.device)
-                    x_j = x + torch.normal(mean=train_X.mean() - self.shift, std=train_X.std(), size=x.size(), device=self.device)
+                    x_i = x + torch.normal(mean=train_X.mean() + self.beta, std=train_X.std(), size=x.size(), device=self.device)
+                    x_j = x + torch.normal(mean=train_X.mean() - self.beta, std=train_X.std(), size=x.size(), device=self.device)
 
                 _, proj_i = self.enc(x_i)
                 _, proj_j = self.enc(x_j)
