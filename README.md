@@ -72,7 +72,7 @@ python3 main.py\
 --seed 1111\
 --res_path [the path where the results will be saved]
 ```
-To run Sup-GsCL [(Alsaggaf et al., 2024)](https://doi.org/10.1093/bfgp/elad059) execute:
+To run Sup-GsCL reported in [(Alsaggaf et al., 2024)](https://doi.org/10.1093/bfgp/elad059) execute:
 ```
 python3 main.py\
 --X [full path to X] --y [full path to y] --delimiter "," --header 0\
@@ -83,7 +83,7 @@ python3 main.py\
 --seed 1111\
 --res_path [the path where the results will be saved]
 ```
-To run Self-GsCL [(Alsaggaf et al., 2024)](https://doi.org/10.1093/bfgp/elad059) execute:
+To run Self-GsCL reported in [(Alsaggaf et al., 2024)](https://doi.org/10.1093/bfgp/elad059) execute:
 ```
 python3 main.py\
 --X [full path to X] --y [full path to y] --delimiter "," --header 0\
