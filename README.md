@@ -13,7 +13,7 @@ This is a python implementation of the Enhanced Gaussian noise augmentation-base
 ```
 
 <p align="center">
-  <img src="images/Flowchart.png" width="1000" title="AGsCL flow-chart">
+  <img src="images/Flowchart.png" width="1000" title="EGsCL flow-chart">
 </p>
 
 # Usage
