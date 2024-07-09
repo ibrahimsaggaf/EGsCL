@@ -4,7 +4,7 @@ from pathlib import Path
 
 from utils import check_path
 from data import AgeingData
-from model import AGsCL
+from model import EGsCL
 
 
 def main(args):
@@ -41,13 +41,13 @@ def main(args):
             'proj_out_dim': 128
         }
 
-    model = AGsCL(
+    model = EGsCL(
             data, args.val_metric, args.loss, args.epochs, args.batch_size, args.step, args.temperature, args.lr, 
             args.wd, device, args.res_path, enc_kwargs, args.beta
         )
     model.fit_cv()
     torch.save(model.cv_res, 
-            Path(args.res_path, f'AGsCL--{args.loss}--{args.val_metric}--{args.beta}--cv_res.pt')
+            Path(args.res_path, f'EGsCL--{args.loss}--{args.val_metric}--{args.beta}--cv_res.pt')
     )
 
 
