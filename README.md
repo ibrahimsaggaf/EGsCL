@@ -112,7 +112,7 @@ Here we briefly describe each `.py` file in the **code** folder.
 `utils.py` Includes some helper functions.
 
 # Availability
-The datasets used in this work and the pretrained encoders that obtained the best predictive performance for each organism can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12143797.svg)](https://doi.org/10.5281/zenodo.12143797).
+The datasets used in this work and the pretrained encoders that obtained the best predictive performance for each organism (see Table 2) can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12143797.svg)](https://doi.org/10.5281/zenodo.12143797).
 
 # Acknowledgements
 The authors acknowledge the support by the School of Computing and Mathematical Sciences and the Birkbeck GTA programme.
