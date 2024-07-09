@@ -1,8 +1,8 @@
-# Predicting the pro-longevity or anti-longevity effect of model organism genes with asymmetric Gaussian noise augmentation-based contrastive learning on protein-protein interaction networks
-This is a python implementation of the Asymmetric Gaussian noise augmentation-based contrastive learning method (AGsCL) reported in:
+# Predicting the pro-longevity or anti-longevity effect of model organism genes with enhanced Gaussian noise augmentation-based contrastive learning on protein-protein interaction networks
+This is a python implementation of the Enhanced Gaussian noise augmentation-based contrastive learning method (EGsCL) reported in:
 ```
 @article{...,
-  title={Predicting the pro-longevity or anti-longevity effect of model organism genes with asymmetric Gaussian noise augmentation-based contrastive learning on protein-protein interaction networks},
+  title={Predicting the pro-longevity or anti-longevity effect of model organism genes with enhanced Gaussian noise augmentation-based contrastive learning on protein-protein interaction networks},
   author={Alsaggaf, Ibrahim and Freitas, Alex and Wan, Cen},
   journal={...},
   pages={...},
@@ -17,7 +17,7 @@ This is a python implementation of the Asymmetric Gaussian noise augmentation-ba
 </p>
 
 # Usage
-This repository contains the implementation of AGsCL. The implementation is built in Python3 (version 3.10.12) using Scikit-learn and the deep learning library Pytorch. 
+This repository contains the implementation of EGsCL. The implementation is built in Python3 (version 3.10.12) using Scikit-learn and the deep learning library Pytorch. 
 
 ## Requirements
 - torch==2.1.1
@@ -29,7 +29,7 @@ The implementation should run on a machine with at least 5 cores, 20 GB memory a
 2. Navigate to your working directory where the `.py` files are stored (e.g. src).
 3. Execute one of the following commands:
 
-To run Sup-AGsCL execute:
+To run Sup-EGsCL execute:
 ```
 python3 main.py\
 --X [full path to X] --y [full path to y] --delimiter "," --header 0\
@@ -40,7 +40,7 @@ python3 main.py\
 --seed 1111\
 --res_path [the path where the results will be saved]
 ```
-To run Self-AGsCL execute:
+To run Self-EGsCL execute:
 ```
 python3 main.py\
 --X [full path to X] --y [full path to y] --delimiter "," --header 0\
@@ -99,9 +99,9 @@ python3 main.py\
 ### The code
 Here we briefly describe each `.py` file in the **code** folder.
 
-`main.py` Runs the AGsCL method.
+`main.py` Runs the EGsCL method.
 
-`model.py` Includes the implementation of AGsCL.
+`model.py` Includes the implementation of EGsCL.
 
 `data.py` Reads and preprocesses the given dataset.
 
