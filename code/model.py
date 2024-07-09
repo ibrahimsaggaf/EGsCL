@@ -56,7 +56,7 @@ class BaseModel:
         self.best_enc = Encoder(**self.enc_kwargs).to(self.device)
         checkpoint = torch.load(
             Path(
-                self.res_path, f'AGsCL--{self.loss}--{fold}--{self.val_metric}--{self.beta}_checkpoint.pt'
+                self.res_path, f'EGsCL--{self.loss}--{fold}--{self.val_metric}--{self.beta}_checkpoint.pt'
             )
         )
         self.best_enc.load_state_dict(checkpoint)
@@ -75,7 +75,7 @@ class BaseModel:
         if res[f'test_{self.val_metric}'] >= self.fold_res[f'best_val_{self.val_metric}']:
             torch.save(
                 self.enc.state_dict(), Path(
-                    self.res_path, f'AGsCL--{self.loss}--{fold}--{self.val_metric}--{self.beta}_checkpoint.pt'
+                    self.res_path, f'EGsCL--{self.loss}--{fold}--{self.val_metric}--{self.beta}_checkpoint.pt'
                 )
             )
             self.fold_res[f'best_val_{self.val_metric}'] = res[f'test_{self.val_metric}']
@@ -128,7 +128,7 @@ class BaseModel:
             self.cv_res[fold] = self.fold_res
 
 
-class AGsCL(BaseModel):
+class EGsCL(BaseModel):
     def __init__(self, data, val_metric, loss, epochs, batch_size, step, temperature, lr, wd, device, res_path, 
                  enc_kwargs, beta):
         super().__init__(
