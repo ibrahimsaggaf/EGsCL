@@ -8,7 +8,7 @@ This is a python implementation of the Enhanced Gaussian noise augmentation-base
   pages={...},
   year={...},
   publisher={...},
-  note={Submitted for publication to ..., July 2024}
+  note={Submitted for publication to NAR Genomics and Bioinformatics, July 2024.}
 }
 ```
 
