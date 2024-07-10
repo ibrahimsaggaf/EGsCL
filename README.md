@@ -3,7 +3,7 @@ This is a python implementation of the Enhanced Gaussian noise augmentation-base
 ```
 @article{...,
   title={Predicting the pro-longevity or anti-longevity effect of model organism genes with enhanced Gaussian noise augmentation-based contrastive learning on protein-protein interaction networks},
-  author={Alsaggaf, Ibrahim and Freitas, Alex and Wan, Cen},
+  author={Alsaggaf, Ibrahim and Freitas, Alex A. and Wan, Cen},
   journal={...},
   pages={...},
   year={...},
