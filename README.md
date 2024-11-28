@@ -1,14 +1,18 @@
 # Predicting the pro-longevity or anti-longevity effect of model organism genes with enhanced Gaussian noise augmentation-based contrastive learning on protein-protein interaction networks
 This is a python implementation of the Enhanced Gaussian noise augmentation-based contrastive learning method (EGsCL) reported in:
 ```
-@article{...,
-  title={Predicting the pro-longevity or anti-longevity effect of model organism genes with enhanced Gaussian noise augmentation-based contrastive learning on protein-protein interaction networks},
-  author={Alsaggaf, Ibrahim and Freitas, Alex A. and Wan, Cen},
-  journal={...},
-  pages={...},
-  year={...},
-  publisher={...},
-  note={Under review}
+@article{10.1093/nargab/lqae153,
+    author = {Alsaggaf, Ibrahim and Freitas, Alex A and Wan, Cen},
+    title = {Predicting the pro-longevity or anti-longevity effect of model organism genes with enhanced Gaussian noise augmentation-based contrastive learning on protein–protein interaction networks},
+    journal = {NAR Genomics and Bioinformatics},
+    volume = {6},
+    number = {4},
+    pages = {lqae153},
+    year = {2024},
+    month = {11},
+    issn = {2631-9268},
+    doi = {10.1093/nargab/lqae153},
+    url = {https://doi.org/10.1093/nargab/lqae153}
 }
 ```
 
